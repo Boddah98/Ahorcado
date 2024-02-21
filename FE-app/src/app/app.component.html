@@ -1,1 +1,21 @@
-<router-outlet></router-outlet>
+<mat-sidenav-container >
+  <mat-sidenav mode="side" opened="true" style="background-color: silver;" >      
+    <!-- Contenido de la barra lateral -->
+    <mat-nav-list >
+      <div style="max-width: 150px; text-align: center; margin:auto;">
+        <img mat-card src="../assets/ico.png" style="width: 100%; height: auto; float: inline-start;"> 
+      </div>
+      <a mat-list-item routerLink="/">Iniciar una partida</a>
+      <a mat-list-item routerLink="/">Historial de resultados   </a>
+      
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content style=" background-image: url(../assets/background.png)" >
+    <!-- Contenido principal  -->
+    <router-outlet></router-outlet> 
+    <div >
+      
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
