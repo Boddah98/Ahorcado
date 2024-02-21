@@ -1,0 +1,322 @@
+[
+  {
+    "ID_word": "1",
+    "word": "CARACOL"
+  },
+  {
+    "ID_word": "2",
+    "word": "VELOCIDAD"
+  },
+  {
+    "ID_word": "3",
+    "word": "CACEROLA"
+  },
+  {
+    "ID_word": "4",
+    "word": "ESTACIÓN"
+  },
+  {
+    "ID_word": "5",
+    "word": "COCODRILO"
+  },
+  {
+    "ID_word": "6",
+    "word": "PRECIOSO"
+  },
+  {
+    "ID_word": "7",
+    "word": "AMARILLO"
+  },
+  {
+    "ID_word": "8",
+    "word": "CAMINANTE"
+  },
+  {
+    "ID_word": "9",
+    "word": "ELECTRICIDAD"
+  },
+  {
+    "ID_word": "10",
+    "word": "CONVERSAR"
+  },
+  {
+    "ID_word": "11",
+    "word": "OPORTUNIDAD"
+  },
+  {
+    "ID_word": "12",
+    "word": "IDENTIDAD"
+  },
+  {
+    "ID_word": "13",
+    "word": "RADIANTE"
+  },
+  {
+    "ID_word": "14",
+    "word": "JARDINERÍA"
+  },
+  {
+    "ID_word": "15",
+    "word": "AMARILLENTO"
+  },
+  {
+    "ID_word": "16",
+    "word": "ELEFANTE"
+  },
+  {
+    "ID_word": "17",
+    "word": "SALVAJE"
+  },
+  {
+    "ID_word": "18",
+    "word": "IMAGINARIO"
+  },
+  {
+    "ID_word": "19",
+    "word": "INVESTIGAR"
+  },
+  {
+    "ID_word": "20",
+    "word": "DESPERTAR"
+  },
+  {
+    "ID_word": "21",
+    "word": "EXQUISITO"
+  },
+  {
+    "ID_word": "22",
+    "word": "FACILIDAD"
+  },
+  {
+    "ID_word": "23",
+    "word": "GENEROSO"
+  },
+  {
+    "ID_word": "24",
+    "word": "HOSPITAL"
+  },
+  {
+    "ID_word": "25",
+    "word": "INVESTIGACIÓN"
+  },
+  {
+    "ID_word": "26",
+    "word": "LUMINOSO"
+  },
+  {
+    "ID_word": "27",
+    "word": "NOTICIERO"
+  },
+  {
+    "ID_word": "28",
+    "word": "PERCEPCIÓN"
+  },
+  {
+    "ID_word": "29",
+    "word": "RASCACIELOS"
+  },
+  {
+    "ID_word": "30",
+    "word": "SIMPATÍA"
+  },
+  {
+    "ID_word": "31",
+    "word": "VENTANILLA"
+  },
+  {
+    "ID_word": "32",
+    "word": "BUCEADOR"
+  },
+  {
+    "ID_word": "33",
+    "word": "COMBINADO"
+  },
+  {
+    "ID_word": "34",
+    "word": "DESLIZARSE"
+  },
+  {
+    "ID_word": "35",
+    "word": "ENCICLOPEDIA"
+  },
+  {
+    "ID_word": "36",
+    "word": "FACULTAD"
+  },
+  {
+    "ID_word": "37",
+    "word": "GIGANTESCO"
+  },
+  {
+    "ID_word": "38",
+    "word": "INCREMENTO"
+  },
+  {
+    "ID_word": "39",
+    "word": "JUSTICIA"
+  },
+  {
+    "ID_word": "40",
+    "word": "LUNÁTICO"
+  },
+  {
+    "ID_word": "41",
+    "word": "NACIMIENTO"
+  },
+  {
+    "ID_word": "42",
+    "word": "ORGANISMO"
+  },
+  {
+    "ID_word": "43",
+    "word": "PRÓXIMO"
+  },
+  {
+    "ID_word": "44",
+    "word": "QUISQUILLOSO"
+  },
+  {
+    "ID_word": "45",
+    "word": "REVERENCIA"
+  },
+  {
+    "ID_word": "46",
+    "word": "SUBMARINO"
+  },
+  {
+    "ID_word": "47",
+    "word": "TALADRO"
+  },
+  {
+    "ID_word": "48",
+    "word": "UTOPÍA"
+  },
+  {
+    "ID_word": "49",
+    "word": "VIBRACIÓN"
+  },
+  {
+    "ID_word": "50",
+    "word": "ABUNDANCIA"
+  },
+  {
+    "ID_word": "51",
+    "word": "CAMIONETA"
+  },
+  {
+    "ID_word": "52",
+    "word": "DIAMANTE"
+  },
+  {
+    "ID_word": "53",
+    "word": "ESTÁNDAR"
+  },
+  {
+    "ID_word": "54",
+    "word": "FAMILIAR"
+  },
+  {
+    "ID_word": "55",
+    "word": "GENUINO"
+  },
+  {
+    "ID_word": "56",
+    "word": "HIGIENE"
+  },
+  {
+    "ID_word": "57",
+    "word": "INCLINADO"
+  },
+  {
+    "ID_word": "58",
+    "word": "JUVENTUD"
+  },
+  {
+    "ID_word": "59",
+    "word": "LITERATURA"
+  },
+  {
+    "ID_word": "60",
+    "word": "PARADIGMA"
+  },
+  {
+    "ID_word": "61",
+    "word": "QUÍMICO"
+  },
+  {
+    "ID_word": "62",
+    "word": "RECICLAJE"
+  },
+  {
+    "ID_word": "63",
+    "word": "SENSACIÓN"
+  },
+  {
+    "ID_word": "64",
+    "word": "TRAVESÍA"
+  },
+  {
+    "ID_word": "65",
+    "word": "AVENTURA"
+  },
+  {
+    "ID_word": "66",
+    "word": "CALABAZA"
+  },
+  {
+    "ID_word": "67",
+    "word": "DESEMPEÑO"
+  },
+  {
+    "ID_word": "68",
+    "word": "EFECTIVO"
+  },
+  {
+    "ID_word": "69",
+    "word": "GENERACIÓN"
+  },
+  {
+    "ID_word": "70",
+    "word": "HELICÓPTERO"
+  },
+  {
+    "ID_word": "71",
+    "word": "INCENDIO"
+  },
+  {
+    "ID_word": "72",
+    "word": "JARDINES"
+  },
+  {
+    "ID_word": "73",
+    "word": "LABIOS"
+  },
+  {
+    "ID_word": "74",
+    "word": "MARAVILLA"
+  },
+  {
+    "ID_word": "75",
+    "word": "PALPITANTE"
+  },
+  {
+    "ID_word": "76",
+    "word": "QUIRÚRGICO"
+  },
+  {
+    "ID_word": "77",
+    "word": "RESTAURANTE"
+  },
+  {
+    "ID_word": "78",
+    "word": "SINFONÍA"
+  },
+  {
+    "ID_word": "79",
+    "word": "TEMPESTAD"
+  },
+  {
+    "ID_word": "80",
+    "word": "VEHÍCULO"
+  }
+]
