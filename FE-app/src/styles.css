@@ -2,3 +2,54 @@
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.allGameField{
+    min-width: 400px;
+    min-height: 600px;
+    max-width: 1200px;
+    max-height: 1000px;
+    padding: 30px;
+    margin: 80px;  
+    margin-top: 40px;     
+}
+.allGameField mat-card{
+    margin-bottom: 10px;
+}
+.gameField{
+    min-height: 400px;
+}
+.keyboard{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: flex-start;
+   max-width: 1000;
+   padding: 10px;
+}
+.keyboard mat-button{
+    /*Dimensions*/    
+    margin: 11px;
+    border-radius: 5px;
+    min-width: 70px;
+    min-height: 50px;
+    /*Appearance*/
+    text-align: center;
+    font-size: large;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: silver;
+    cursor: pointer;
+    padding-top: 15px;
+    
+}
+.navGame {
+    width:250px; 
+    text-align: center; 
+    margin:auto;
+    
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
+
+@media screen and (max-width: 600px) {
+    .navGame {
+      width: 60px; /* Ancho contraído para dispositivos móviles */
+    }
+  }
