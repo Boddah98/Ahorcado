@@ -9,11 +9,9 @@ import { MatDrawerMode } from '@angular/material/sidenav';
 export class AppComponent {
   title = 'FE-app';
   sidenavMode : MatDrawerMode = 'side';
-  
+  initiateGame = true;
   constructor(){
     
   }
-  toggleSidenav() {
-    this.sidenavMode = this.sidenavMode === 'side' ? 'over' : 'side';
-  }
+  
 }

@@ -9,7 +9,7 @@ export class ConnectionService{
     private api = "http://localhost:3000";
     constructor(private http: HttpClient){
     }
-    public getQuestions(){
+    public getWords(){
         return this.http.get<Response>(this.api+'/getWordSet')     
     }        
 }

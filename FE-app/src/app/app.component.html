@@ -14,8 +14,9 @@
   <mat-sidenav-content style=" background-image: url(../assets/background.png)" >
     <!-- Contenido principal  -->
     <router-outlet></router-outlet> 
-    
-    <app-game></app-game>
+    <div *ngIf ="initiateGame">
+      <app-game></app-game>
+    </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
 

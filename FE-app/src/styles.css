@@ -2,6 +2,7 @@
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/********************** For game field ********************/
 .allGameField{
     min-width: 400px;
     min-height: 600px;
@@ -13,6 +14,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 .allGameField mat-card{
     margin-bottom: 10px;
+}
+.allGameField mat-card img{
+    max-width: 450px;
+    
+    margin-left: 30%;
 }
 .gameField{
     min-height: 400px;
@@ -39,15 +45,51 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     padding-top: 15px;
     
 }
+/********************** For nav field ********************/
 .navGame {
     width:250px; 
     text-align: center; 
-    margin:auto;
-    
+    margin:auto;    
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     
 }
+/********************** Pop up  ********************/
+.popup-container{
+    /*Dimensions*/
+    position: fixed;
+    top: 30%;           /*for position in the center of the screen*/
+    left: 40%;
+    width: 500px;
+    max-width: 80%;
+    padding: 20px;    
+    z-index: 1000;
+    border-radius: 5px;
+    /*Appearance*/
+    background-color:silver;
+    border-width: 1px;
+    border-color: gray;
 
+}
+.popup-container mat-card{
+    /*Dimensions*/ 
+    padding: 10px;
+    margin-top: 10px;
+    max-width: 400px;
+    min-height: 40px;    
+    /*Appearance*/
+    background-color: silver;
+    border-width: 1px;
+    border-color: gray;
+}
+.popup-container input{
+    width: 250px;
+    min-height: 30px;
+}
+.popup-container img{ 
+    margin-right: 5px;
+    width: 20px;
+    height: 20px;
+}
 @media screen and (max-width: 600px) {
     .navGame {
       width: 60px; /* Ancho contraído para dispositivos móviles */

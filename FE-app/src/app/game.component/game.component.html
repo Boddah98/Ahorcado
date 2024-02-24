@@ -1,5 +1,26 @@
-<main>
+<main >
+    
     <mat-card class="allGameField">
+        <div class="popup-container" id="popup">
+            <h1>¡A ver! díganme sus nombres</h1>
+            <mat-card >
+                <div >
+                    <img  mat-card src="../../assets/player-ico.png" alt="">
+                    <input type="text" placeholder="Puedes ser el primero" [(ngModel)]="input1">
+                </div>
+                
+            </mat-card>
+            <mat-card>
+                <div >
+                    <img src="../../assets/player-ico.png" alt="">
+                    <input type="text" placeholder="O quizá este, no lo sé" [(ngModel)]="input2">
+                </div>
+                
+            </mat-card>
+            
+            <button [disabled]="!(input1 && input2)" id="starGameButton">Listo</button>
+
+        </div>
         <mat-card class="card" style="background-color:silver; ">
             <div>
                 <h1>scores and info </h1>
@@ -7,8 +28,8 @@
             
         </mat-card>
         <mat-card class="gameField">
-            <div>
-                <h1>all game structure </h1>
+            <div id="hangedField">
+                
             </div>
         </mat-card>
         
