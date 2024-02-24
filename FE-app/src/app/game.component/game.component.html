@@ -4,38 +4,66 @@
         <div class="popup-container" id="popup">
             <h1>¡A ver! díganme sus nombres</h1>
             <mat-card >
-                <div >
-                    <img  mat-card src="../../assets/player-ico.png" alt="">
-                    <input type="text" placeholder="Puedes ser el primero" [(ngModel)]="input1">
-                </div>
-                
+                <div class="playersNames">
+                    <div>
+                        <img src="../../assets/player-ico.png" alt="">
+                    </div>
+                    <div>
+                        <input type="text" placeholder="Puedes ser el primero" [(ngModel)]="input1">
+                    </div>
+                    
+                </div>                
             </mat-card>
-            <mat-card>
-                <div >
-                    <img src="../../assets/player-ico.png" alt="">
-                    <input type="text" placeholder="O quizá este, no lo sé" [(ngModel)]="input2">
-                </div>
-                
+            <mat-card >  
+                <div class="playersNames">
+                    <div>
+                        <img src="../../assets/player-ico.png" alt="">
+                    </div>  
+                    <div>
+                        <input type="text" placeholder="O quizá este, no lo sé" [(ngModel)]="input2">                                
+                    </div>                                      
+                </div>              
             </mat-card>
             
             <button [disabled]="!(input1 && input2)" id="starGameButton">Listo</button>
 
         </div>
         <mat-card class="card" style="background-color:silver; ">
-            <div>
-                <h1>scores and info </h1>
+            <div class="gameInfo" id="gameInfoContainer">                                   
+                <mat-card >
+                    <strong >Player - 1</strong>
+                    
+                    <div >
+                        <strong>{{player1}}</strong>
+                    </div>                    
+                </mat-card>                
+                <mat-card >
+                    <strong >Player - 2</strong>
+                    
+                    <div >
+                        <strong>{{player2}}</strong>
+                    </div>
+                    
+                </mat-card>         
+                <mat-card >
+                    <strong > Round</strong>
+                    
+                    <div >
+                        <strong>{{round}}</strong>
+                    </div>
+                    
+                </mat-card>       
             </div>
             
         </mat-card>
         <mat-card class="gameField">
-            <div id="hangedField">
-                
+            <div id="hangedField">                
             </div>
         </mat-card>
         
         <mat-card class="card">
-            <div>
-                <h1>letters</h1>
+            <div class="lettersContainer" id="lettersContainer">
+                
             </div>
         </mat-card>
         <mat-card class="card">
