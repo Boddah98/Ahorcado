@@ -10,14 +10,15 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 .gameInfo mat-card{
     height: 50px;
-    width: 200px;
+    min-width: 300px;
     font-size: large;
-    margin: 10px;
+    margin: 15px;
     padding: 5px;
     display: flex;    
     justify-content:flex-start;
     flex-wrap: wrap; 
     padding: 10px;  
+    background-color: hsl(208, 100%, 97%);
 }
 
 /********************** For game field ********************/
@@ -88,13 +89,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     text-align: start; 
     padding:10px;        
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    
+    font-size: small;
     
 }
 .navGame img{
     height: 80px;
     border-radius: 50%;
 }
+
 /********************** Pop up  ********************/
 .popup-container{
     /*Dimensions*/
@@ -108,7 +110,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     border-radius: 5px;
     /*Appearance*/
     background-color:silver;
-    border-width: 1px;
+    border-width: 5x;
     border-color: gray;
 
 }

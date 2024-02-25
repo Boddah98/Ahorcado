@@ -1,4 +1,4 @@
-<main >
+<main id="main" >
     
     <mat-card class="allGameField">
         <div class="popup-container" id="popup">
@@ -31,27 +31,16 @@
         <mat-card class="card" style="background-color:silver; ">
             <div class="gameInfo" id="gameInfoContainer">                                   
                 <mat-card >
-                    <strong >Player - 1</strong>
-                    
-                    <div >
-                        <strong>{{player1}}</strong>
-                    </div>                    
+                    <strong >Player - 1</strong>                    
+                    <strong>{{player1}} </strong>                                     
                 </mat-card>                
                 <mat-card >
                     <strong >Player - 2</strong>
-                    
-                    <div >
-                        <strong>{{player2}}</strong>
-                    </div>
-                    
+                    <strong> {{player2}} </strong>
                 </mat-card>         
-                <mat-card >
-                    <strong > Round</strong>
-                    
-                    <div >
-                        <strong>{{round}}</strong>
-                    </div>
-                    
+                <mat-card *ngIf="actualPlayer" style="background-color: rgb(148, 177, 144);" >
+                    <strong > Round {{round}}</strong>                                       
+                    <strong > Turno de: {{actualPlayer}}</strong>                                       
                 </mat-card>       
             </div>
             

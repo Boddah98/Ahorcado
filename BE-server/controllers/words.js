@@ -13,7 +13,7 @@ module.exports = class Controller{
                 return;
             }
             const jsonWordsData = JSON.parse(data);
-            const fourWords = this.getFourPack(jsonWordsData);
+            const fourWords = this.getWordPack(jsonWordsData);
             return res.send({
                 code : 200,
                 data : fourWords
@@ -21,22 +21,23 @@ module.exports = class Controller{
         });
     }
     // The list of the words select must not have the same options 
-    static getFourPack(jsondata){
+    static getWordPack(jsondata){
         let indexList = [];
         let wordList = [];
         while (indexList.length<4){
             let wordIndex = randomInt(79);
             if(wordIndex in indexList){
-                console.log(wordIndex," is in indexList", indexList);
+                
                 continue;
             }else{                
                 indexList.push(wordIndex);
                 wordList.push(jsondata[wordIndex])
                 //console.log("word",jsondata[wordIndex]," added to 4pack. New words list:");
-                //console.log(wordList);
+                console.log(wordList);
 
             }
         }
+        
         return wordList;
        
     }
