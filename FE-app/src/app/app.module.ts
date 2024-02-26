@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { gameComponent } from './game.component/game.component';
+import { resultsComponent } from './results.component copy/results.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 //All angular material
@@ -16,7 +17,8 @@ import { MatButtonModule } from '@angular/material/button';
 @NgModule({
   declarations: [
     AppComponent,
-    gameComponent
+    gameComponent,
+    resultsComponent
   ],
   imports: [
     BrowserModule,

@@ -25,7 +25,7 @@
                 </div>              
             </mat-card>
             
-            <button [disabled]="!(input1 && input2)" id="starGameButton">Listo</button>
+            <button [disabled]="!((input1 && input2) && (input1!==input2))" id="starGameButton">Listo</button>
 
         </div>
         <mat-card class="card" style="background-color:silver; ">

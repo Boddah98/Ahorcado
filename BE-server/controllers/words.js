@@ -27,7 +27,7 @@ module.exports = class Controller{
         while (indexList.length<4){
             let wordIndex = randomInt(79);
             if(wordIndex in indexList){
-                
+                console.log("encontrada, repetir")
                 continue;
             }else{                
                 indexList.push(wordIndex);

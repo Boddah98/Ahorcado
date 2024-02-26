@@ -5,12 +5,14 @@
       <div style="padding: 10px;">
         <img mat-card src="../assets/ico.png" style="width: 100%; height: auto; float: inline-start;"> 
       </div>
+      <br>
       <div>
-        <h2 mat-list-item routerLink="/" >Iniciar una partida</h2>
+        <br>
+        <button mat-list-item id="game">Iniciar una partida</button>
       </div>
+      <br>
       <div>
-        
-        <h2 mat-list-item routerLink="/">Historial de resultados   </h2>  
+        <button mat-list-item id="results">Historial de resultados   </button>  
       </div>
       
       
@@ -20,7 +22,9 @@
   
   <mat-sidenav-content style=" background-image: url(../assets/background.png)" >
     <!-- Contenido principal  -->
-    <router-outlet></router-outlet> 
+    <div *ngIf="showResults">
+      <app-results></app-results>
+    </div>
     <div *ngIf ="initiateGame">
       <app-game></app-game>
     </div>

@@ -16,8 +16,10 @@ app.listen(port, () => {
 
 const wordsController = require('./controllers/words');
 app.get("/getWordSet",wordsController.getWordsSet);
+const resultsController = require('./controllers/results');
+app.get("/getResults",resultsController.getResults);
 
-// Results data methods and const
+app.post("/addResult",resultsController.addResult);
 
 
 /* Controllers for api calls

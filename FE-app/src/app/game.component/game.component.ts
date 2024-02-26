@@ -3,6 +3,7 @@ import{ ConnectionService } from '../services/connection';
 import { firstValueFrom } from 'rxjs';
 import { word } from '../models/word';
 import { result } from '../models/result'
+
 @Component({
   selector: 'app-game',
   templateUrl: './game.component.html',
@@ -36,40 +37,36 @@ export class gameComponent implements OnInit{
   round = 1
   wordIndex = 0
   hangedStatus = 0
+  
   constructor(cs: ConnectionService){
     this.cs = cs;
-    this.words= [];
+    this.words= []; 
     
-
   }
+
   ngOnInit(): void {
     
     this.init();
   }
   async init(){
     document.getElementById("starGameButton")?.addEventListener("click",evt=>{
-      this.newGame();
-      const startTime = new Date().getTime();
-
-      // Código a ejecutar
-
-      const endTime = new Date().getTime();
-      const elapsedTime = endTime - startTime;
-      
+      this.newGame();      
     })
     
   }
   togglePopup() {
-    const popupElement = document.querySelector("#popup") as HTMLElement | null;  
-    if (popupElement) {
-      if (!this.displayPopup) {
-        this.displayPopup = true;
-        popupElement.style.display = 'fixed'; 
-      } else {
-        this.displayPopup = false;
-        popupElement.style.display = 'none';
-      }      
-    }
+    let popupElement = document.getElementById("popup") as HTMLElement ;  
+
+    if (!this.displayPopup) {
+      this.displayPopup = true;
+      popupElement.style.display = 'block'; 
+      
+    } else {
+      this.displayPopup = false;
+      popupElement.style.display = 'none';
+      
+    }      
+  
     
   }
   /*
@@ -79,7 +76,7 @@ export class gameComponent implements OnInit{
     // gets the words from the backend
     this.words = (await firstValueFrom(this.cs.getWords())).data as word[];
     this.randPlayerInfo();    
-    this.togglePopup();
+    this.togglePopup()
     this.createKeyboard();     
     this.setHangedStatus();    
     this.setWordLetters()
@@ -209,8 +206,7 @@ export class gameComponent implements OnInit{
     if (!found){
       this.hangedStatus++
       //if this condition is true instead of press the button is loose
-      if(!this.getHangedStatus()){
-        console.log("game over")
+      if(!this.getHangedStatus()){        
         this.endtourn()
       }
     }
@@ -236,8 +232,7 @@ export class gameComponent implements OnInit{
         this.roundsPlayer1++
       }
       this.efTimePlayer1 += this.actualPlayerTime
-      let timeA = this.printTime(this.efTimePlayer1)
-      console.log(timeA)
+      let timeA = this.printTime(this.efTimePlayer1)      
       this.actualPlayer = this.player2
     }else{
       if (this.win){
@@ -245,7 +240,7 @@ export class gameComponent implements OnInit{
       }
       this.efTimePlayer2 += this.actualPlayerTime
       let timeA = this.printTime(this.efTimePlayer2)
-      console.log(timeA)
+      
       this.actualPlayer = this.player1
     }
     this.actualPlayerTime = new Date().getTime()    
@@ -258,9 +253,9 @@ export class gameComponent implements OnInit{
     endTournDiv.setAttribute("class","popup-container")
     
     //Info for the container
-    const matCardInfo = document.createElement("mat-card")
+    const cardInfo = document.createElement("mat-card")
     
-    const winLabel = document.createElement("h2")
+    const winLabel = document.createElement("h1")
     let labelString = ""
     if(this.win){
       labelString = "¡¡Lo salvaste!!"
@@ -269,10 +264,10 @@ export class gameComponent implements OnInit{
     }
     winLabel.innerHTML = labelString
     // Info of the recent tourn
-    const matCardPlayerInfo = document.createElement("div")
-    matCardPlayerInfo.style.backgroundColor = 'white'
-    matCardPlayerInfo.style.borderRadius= '5px'
-    const wordLabel = document.createElement("h1")
+    const cardPlayerInfo = document.createElement("div")
+    cardPlayerInfo.style.backgroundColor = 'white'
+    cardPlayerInfo.style.borderRadius= '5px'
+    const wordLabel = document.createElement("h2")
     let wordString = "La palabra era: "+this.actualWord
     wordLabel.innerHTML = wordString
 
@@ -290,17 +285,118 @@ export class gameComponent implements OnInit{
       mainElement.removeChild(endTournDiv)
       this.newStartGame()
     })
-    matCardInfo.appendChild(winLabel)
-    matCardPlayerInfo.appendChild(wordLabel)
-    matCardPlayerInfo.appendChild(playerLabel)
-    matCardPlayerInfo.appendChild(timeLabel)
-    matCardInfo.appendChild(matCardPlayerInfo)
-    matCardInfo.appendChild(buttonNewStarGame)
-    endTournDiv.appendChild(matCardInfo)
+    cardInfo.appendChild(winLabel)
+    cardPlayerInfo.appendChild(wordLabel)
+    cardPlayerInfo.appendChild(playerLabel)
+    cardPlayerInfo.appendChild(timeLabel)
+    cardInfo.appendChild(cardPlayerInfo)
+    cardInfo.appendChild(buttonNewStarGame)
+    endTournDiv.appendChild(cardInfo)
     mainElement.appendChild(endTournDiv)
     
   }
-  
+  printResultGame(gameResult : result){
+    //Container elements for the pop up
+    const mainElement = document.getElementById("main") as HTMLElement
+    let endGameDiv = document.createElement("div")
+    endGameDiv.setAttribute("class","popup-container")
+    let winLabel = document.createElement("h1")
+    winLabel.innerHTML = "Partida terminada"
+    endGameDiv.style.top = '10%'
+    endGameDiv.style.left = '30%'
+    endGameDiv.style.minWidth = '600px'
+    // Container for game data
+    const cardGameInfo = document.createElement("div")
+    cardGameInfo.style.backgroundColor = 'white'
+    cardGameInfo.style.borderRadius= '5px'
+    
+    // data for the game container
+    let L_nameWinner = document.createElement("h2")
+    let nameWinner = "Ganador: "+ gameResult.winner
+    L_nameWinner.innerHTML = nameWinner
+    let L_winnerMode = document.createElement("h2")
+    let winnerMode = "Modo de gane: "+ gameResult.winMode
+    L_winnerMode.innerHTML = winnerMode
+    cardGameInfo.appendChild(L_nameWinner)
+    cardGameInfo.appendChild(L_winnerMode)
+
+    // Container for player 1 
+    let cardPlayer1Info = document.createElement("div")
+    cardPlayer1Info.style.backgroundColor = 'white'
+    cardPlayer1Info.style.borderRadius= '5px'
+    // Data for player 1
+    let L_P1 = document.createElement("h2")
+    let player1 = "Player 1: "
+    L_P1.innerHTML = player1
+    let L_nameP1 = document.createElement("h2")
+    let nameP1 = "Nombre: " + gameResult.player1
+    L_nameP1.innerHTML = nameP1
+    let L_roundsP1 = document.createElement("h2")
+    let roundsP1 = "Rondas ganadas: " + gameResult.roundsPlayer1
+    L_roundsP1.innerHTML = roundsP1
+    let L_timeP1 = document.createElement("h2")
+    let timeP1 = "Tiempo efectivo total: " + gameResult.timePlayer1
+    L_timeP1.innerHTML = timeP1
+    cardPlayer1Info.appendChild(L_P1)
+    cardPlayer1Info.appendChild(L_nameP1)
+    cardPlayer1Info.appendChild(L_roundsP1)
+    cardPlayer1Info.appendChild(L_timeP1)
+
+    // Container for player 2 
+    let cardPlayer2Info = document.createElement("div")
+    cardPlayer2Info.style.backgroundColor = 'white'
+    cardPlayer2Info.style.borderRadius= '5px'
+    // Data for player 2
+    let L_P2 = document.createElement("h2")
+    let player2 = "Player 2: "
+    L_P2.innerHTML = player2
+    let L_nameP2 = document.createElement("h2")
+    let nameP2 = "Nombre: "+ gameResult.player2
+    L_nameP2.innerHTML = nameP2
+    let L_roundsP2 = document.createElement("h2")
+    let roundsP2 = "Rondas ganadas: " + gameResult.roundsPlayer2
+    L_roundsP2.innerHTML = roundsP2
+    let L_timeP2 = document.createElement("h2")
+    let timeP2 = "Tiempo efectivo total: " + gameResult.timePlayer2
+    L_timeP2.innerHTML = timeP2
+    cardPlayer2Info.appendChild(L_P2)
+    cardPlayer2Info.appendChild(L_nameP2)
+    cardPlayer2Info.appendChild(L_roundsP2)
+    cardPlayer2Info.appendChild(L_timeP2)
+    
+    //Button for close
+    const buttonNewGame = document.createElement("button")
+    buttonNewGame.innerHTML = "Jugar otra vez"
+    
+    buttonNewGame.addEventListener("click",evt=>{
+      mainElement.removeChild(endGameDiv)
+      this.round = 1
+      this.wordIndex = 0
+      this.hangedStatus = 0
+      this.win = false
+      this.input1=""
+      this.input2=""
+      this.roundsPlayer1 = 0 
+      this.roundsPlayer2 = 0 
+      this.efTimePlayer1 = 0
+      this.efTimePlayer2 = 0
+      this.resetGameField()
+      let hangedField = document.getElementById("hangedField")
+      let hangedImg = document.getElementById("hangedImg") as HTMLElement
+      hangedField?.removeChild(hangedImg)  
+      this.togglePopup()
+      
+    })
+    
+
+    endGameDiv.appendChild(winLabel)
+    endGameDiv.appendChild(cardGameInfo)
+    endGameDiv.appendChild(cardPlayer1Info)
+    endGameDiv.appendChild(cardPlayer2Info)
+    endGameDiv.appendChild(buttonNewGame)
+    mainElement.appendChild(endGameDiv)
+
+  }
   newStartGame(){    
     this.wordIndex++;
     this.resetPlayerInfo()
@@ -340,18 +436,12 @@ export class gameComponent implements OnInit{
         gameWinMode = "Empate"
       }
 
-      // Data for player1
-      //console.log(this.player1)      
-      //console.log(this.roundsPlayer1)
+      
       let timePl1 = this.printTime(this.efTimePlayer1)
       
-      //console.log(timePl1)
-      // Data for player1
-      //console.log(this.player2)
-      //console.log(this.roundsPlayer2)
       let timePl2 = this.printTime(this.efTimePlayer2)
       
-      //console.log(timePl2)
+      
       //Using the result model for save into the backend 
       gameResult = {
         player1 : this.player1,
@@ -363,7 +453,9 @@ export class gameComponent implements OnInit{
         winner : gameWinner,
         winMode : gameWinMode
       }
+      this.cs.addResult(gameResult).subscribe(async response=>{});
       console.log(gameResult)
+      this.printResultGame(gameResult)
     }
   }
 
